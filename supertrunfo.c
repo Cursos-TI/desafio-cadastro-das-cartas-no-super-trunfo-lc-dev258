@@ -4,9 +4,9 @@
 
 int main (){
   
-  int populacaoA = 23566;
-  int PopulacaoB = 25233;
-  float areaA = 235.7;
+  int populacaoA;
+  int PopulacaoB;
+  float areaA;
   float AreaB;
   float pibA;
   float PibB;
