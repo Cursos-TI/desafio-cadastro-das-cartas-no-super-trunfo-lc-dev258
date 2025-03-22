@@ -1,0 +1,101 @@
+#include <stdio.h>
+
+// definir as variáveis
+
+int main (){
+  char cidadeA[50], cidadeB[10];
+  int populacaoA, populacaoB;
+  float areaA, areaB;
+  float pibA, pibB;
+  int pontosTuristicosA, pontosTuristicosB;
+  float pibPerA, pibPerB;
+  float densidadePopA, densidadePopB;
+  float poderA, poderB;
+  int comparacao1, comparacao2, comparacao3, comparacao4, comparacao5;
+
+
+  //interação com o usuário
+
+  printf("Digite o nome da cidade A\n");
+  scanf("%s", cidadeA);
+
+  printf("Digite o nome da cidade B\n");
+  scanf("%s", cidadeB);
+
+  printf("População do estado A\n");
+  scanf("%d", &populacaoA);
+
+  printf("População do estado B\n");
+  scanf("%d", &populacaoB);
+
+  printf("Area do estado A\n");
+  scanf("%f", &areaA);
+
+  printf("Area do estado B\n");
+  scanf("%f", &areaB);
+
+  printf("PIB do estado A\n");
+  scanf("%f", &pibA);
+
+  printf("PIB do estado B\n");
+  scanf("%f", &pibB);
+
+  printf("Pontos turísticos do estado A\n");
+  scanf("%d", &pontosTuristicosA);
+
+  printf("Pontos turísticos do estado B\n");
+  scanf("%d", &pontosTuristicosB);
+
+  // calculo da densidade populacional e o pib per capta
+   densidadePopA = populacaoA / areaA;
+   densidadePopB = populacaoB / areaB;
+   pibPerA = pibA / populacaoA;
+   pibPerB = pibB / populacaoB;
+   poderA = (float)(populacaoA + areaA + pibA + pontosTuristicosA + pibPerA);
+   poderB = (float)(populacaoA + areaB + pibB + pontosTuristicosB + pibPerB);
+
+//comparação das cartas
+
+comparacao1 = populacaoA > populacaoB;
+comparacao2 = densidadePopA == densidadePopB;
+comparacao3 = pibA != pibB;
+comparacao4 = pibPerA < pibPerB;
+
+
+  //atributo das cartas
+
+  printf("----------ESTADO A----------\n");
+
+  printf("Nome da cidade A: %s\n", cidadeA);
+  printf("População da cidade A: %d\n", populacaoA);
+  printf("Area do cidade A: %f\n", areaA);
+  printf("PIB do cidade A: %f\n", pibA );
+  printf("Pontos turísticos da cidade A: %d\n", pontosTuristicosA);
+  printf("Densidade populacional da cidade A: %.2f\n", densidadePopA);
+  printf ("PIB per Capta da cidade A: %.2f\n", pibPerA);
+  printf("A soma de todos os poderes da cidade A: %.2f\n", poderA);
+
+  printf("----------ESTADO B----------\n");
+
+  printf("Nome da cidade B: %s\n", cidadeB);
+  printf("Populacao da cidade B: %d\n", populacaoB);
+  printf("Area da cidade B: %f\n", areaB);
+  printf("PIB da cidade B: %f\n", pibB );
+  printf("Pontos turisticos da cidade B: %d\n", pontosTuristicosB);
+  printf("Densidade populacional da cidade B: %.2f\n", densidadePopB);
+  printf ("PIB per Capta da cidade B: %.2f\n", pibPerB);
+  printf("A soma de todos os poderes da cidade B: %.2f\n", poderB);
+
+  //exibição das comparações
+
+  printf("----------EXIBIÇÃO DAS COMPARAÇÕES----------\n");
+
+  printf("A Populacao de A e maior que B ?:%d\n", comparacao1);
+  printf("A densidade populacional de A e maior que B ?:%d\n", comparacao2);
+  printf("O PIB de A e maior que de B ?:%d\n", comparacao3);
+  printf("O PIB per Capta de A e maior que o de B ?:%d\n", comparacao4);
+
+
+
+  return 0;
+}
